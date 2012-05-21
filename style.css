@@ -21,8 +21,8 @@ Version:        0.3.2
 /** 
  * Import grid.css from Basics (or not!) 
  */
-/* @import url("../basics/css/grid-fluid.css"; */
-/* @import url("../basics/css/grid-fixed.css"; */
+/* @import url("../basics/css/grid-fluid.css"); */
+/* @import url("../basics/css/grid-fixed.css"); */
 
 /** 
 * Import tool.css from Basics 
