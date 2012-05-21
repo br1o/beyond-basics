@@ -1,0 +1,612 @@
+/*
+@package WordPress
+@subpackage Beyond Basics
+@author Bruno Bichet <bruno.bichet@gmail.com>
+@version 0.3.2
+@since Version 0.1
+@todo Check the markup http://validator.w3.org/
+For Those About to Rock. Fire!
+*/
+
+/**
+ * =HTML
+ * Tip: ask yourself if some CSS rules shouldn't be nested into markup.css 
+ */ 
+
+a { 
+	-webkit-transition: background .4s ease;
+	-moz-transition: background .4s ease;
+	-o-transition: background .4s ease;
+	transition: background .4s ease;
+
+	-webkit-transition: color .3s linear;
+	-moz-transition: color .3s linear;
+	-o-transition: color .3s linear;
+	transition: color .3s linear; 	
+}
+a:visited { 
+	color: #333 
+}
+a:hover { 
+	background: #fff;
+	background: rgba(255,255,255,0.50);
+	-moz-border-radius: 3px;
+    border-radius: 3px;
+}
+a:focus, :focus { 
+	outline: 1px dotted #000; 
+}
+
+a:hover, a:active { 
+	outline: none; 
+}
+a:active {
+	position: relative;
+	top: 1px;
+}
+
+/**
+ * =Document: global
+ */ 
+ 
+/* =Aspect */
+
+html { 
+	background: #000 url(https://si1.twimg.com/profile_background_images/256487096/bg-basics-gothic.png) no-repeat top center; 
+}
+
+body {
+	background: #807666;
+	background: rgba(128,118,102,0.8);
+	font-size: 0.8em;
+}
+
+section, #banner, #content-info {
+	background: #eee;
+	background: rgba(255,255,255,0.8);
+}
+section, #banner, #content-info, .section-title {
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+#sidebar .section-title { 
+	font-size: 1.539em; 
+}
+
+/* =Horizontal Grid  and Vertical Grid */
+
+body {
+	width: 960px;
+	margin: 1.539em auto;
+}
+#page {
+	width: 940px;
+	margin: 0 auto;
+	padding: 1em 0;
+	/* Play with comments to toggle the 940 pixels grid */ 
+	/*background: url(grid.png) repeat-x;*/
+}
+#banner {
+	padding: 0.539em 1.539em;
+}
+#main, #sidebar, #sidebar .sidebars {
+	float: left;
+	position: relative;
+}
+#main {
+	width: 540px;
+	clear: left;
+}
+.singular #main { 
+	width: 620px; 
+}
+#sidebar  { 
+	width: 380px;
+	margin-left: 20px; 	
+}
+.singular #sidebar, .singular #sidebar .sidebars  { 
+	width: 300px; 
+}
+#sidebar .sidebars {
+	margin-left: 0px;	
+	width: 180px;
+}
+#sidebar .sidebar { 
+	clear: left;
+	margin-left: 0;
+}
+#sidebar .sidebar h2 { 
+	margin-top: 0;
+}
+#sidebar .sidebars + .sidebars { 
+	margin-left: 20px; 
+}
+#sidebar .sidebars > h1 { 
+	padding: .809em 0;
+	margin-bottom: 1em;
+}
+#content-info { 
+	clear: both; 
+}
+section, #content-info { 
+	padding: 1.539em; 
+}
+#site-navigation:before, #site-navigation:after { 
+	content: "\0020"; 
+	display: block; 
+	height: 0; 
+	overflow: hidden; 
+}
+#site-navigation:after { 
+	clear: both; 
+}
+#site-navigation { 
+	zoom: 1; 
+}
+#content, section, article { 
+	overflow: hidden; 
+}
+.search-in, #banner, .home #content, .singular #content, footer > aside, section header, section[role="main"], section.widget { 
+	margin-bottom: 1.539em; 
+}
+section > article { 
+	padding-top: 0; 
+}
+.section-title { 
+	margin: 0 0 .27em 0 
+}
+.section-description { 
+	margin: .27em 0 .539em 1.539em; 
+}
+
+/**
+ * =Document: specifics
+ */ 
+
+ /* =Banner
+-------------------------------------------------------------- */
+
+#site-title {
+	margin-top: 0;
+}
+#site-title  a { 
+	display: block; 
+	float: left;
+	width: 260px;
+	height: 72px;
+	background: url(../img/logo.png) no-repeat;
+	text-decoration: none;
+}
+#site-title { 
+	/* Image Replacement from .ir class (tool.css) */
+	border: 0; text-indent: -999em; overflow: hidden; background-color: transparent; background-repeat: no-repeat; text-align: left; direction: ltr;
+}
+#site-description {
+	float: left;
+	font-size: 3em;
+	margin-top: 0;
+	line-height: 1;
+	text-align: center;
+	text-shadow: #9285AD 0px 1px 1px;	
+}
+.skip-link {
+	margin-bottom: 1em;
+	text-transform: none;
+}
+
+ /* =Site Navigation
+-------------------------------------------------------------- */
+
+/* =Navigation systems in the banner area 
+-------------------------------------------------------------- */
+
+/* =Top Menu */
+
+#site-navigation  .section-title, 
+.skip-link, 
+#colophon .section-title {
+	/* .visuallyhidden from ../basics/css/tool.css */
+	border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px;
+}
+.skip-link:active, 
+.skip-link:focus {
+	/* .focusable from ../basics/css/tool.css */
+	clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto;
+}
+.current-menu-item { 
+	font-weight: bold; 
+}
+#widget-area-1 { 
+	float: right;
+	margin-top: -0.539em;
+}
+#widget-area-1 li { 
+	display: inline-block;
+}
+#widget-area-1 li:before { 
+	content: " | "; 
+}
+#widget-area-1 li:first-child:before { 
+	content: ""; 
+}
+.oldie #widget-area-1 li, 
+.oldie #widget-area-1 li { 
+	display: inline;
+	margin-left: 0.27em;	
+	zoom: 1;
+}
+.oldie #widget-area-1 li:first-child,
+.oldie #widget-area-1 li:first-child { 
+	margin-left: 0;
+}
+
+/* =Main Menu */
+#site-navigation .section-title {
+
+}	
+
+#site-navigation {
+	text-transform: uppercase;
+	clear: both;
+}
+.site-navigation a {
+	color: #333;
+	background: #ECEBE8;
+	text-decoration: none;
+	padding: 0.27em .539em;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	box-shadow: #070609 0px 1px 1px;
+}
+.site-navigation a:hover, .site-navigation .current_page_item a, .site-navigation .current-menu-item a {
+	color: #eee;
+	background: #807666;
+	font-weight: normal;
+	box-shadow: #000000 0px 1px 1px;
+}
+#site-navigation { 
+	margin-bottom: .539em; 
+}
+.site-navigation li { 
+	list-style: none;
+}
+.site-navigation li + li { 
+	margin-left: 20px;
+}
+.site-navigation .children li {
+	margin-left: 0;
+}
+.site-navigation > ul > li { 
+	margin-left: 1.539em; 
+	text-align: center;
+}
+.site-navigation ul > li:first-child { 
+	margin-left: 0; 
+}
+.site-navigation ul { /* all lists */
+	padding: 0;
+	margin: 0;
+	line-height: 1;
+}
+.site-navigation a {
+	display: block;
+	width: 10em;
+}
+.site-navigation li { /* all list items */
+	float: left;
+	width: 10em; /* width needed or else Opera goes nuts */
+}
+.site-navigation li ul { /* second-level lists */
+	position: absolute;
+	background: transparent;
+	width: 10em;
+	left: -999em; /* using left instead of display to hide menus because display: none isn't read by screen readers */
+	text-align: left;
+}
+.site-navigation li ul ul { /* third-and-above-level lists */
+	margin: -1em 0 0 10em;
+}
+.site-navigation li:hover ul ul, 
+.site-navigation li:hover ul ul ul, 
+.site-navigation li.sfhover ul ul, 
+.site-navigation li.sfhover ul ul ul {
+	left: -999em;
+}
+.site-navigation li:hover ul, 
+.site-navigation li li:hover ul, 
+.site-navigation li li li:hover ul, 
+.site-navigation li.sfhover ul, 
+.site-navigation li li.sfhover ul, 
+.site-navigation li li li.sfhover ul { /* lists nested under hovered list items */
+	left: auto;
+}
+
+/* First level of li's doesn't need width */
+
+ul.site-navigation > li, 
+div.site-navigation > ul > li { 
+	width: auto; 
+	text-align: center;
+}
+ul.site-navigation > li > a,
+div.site-navigation > ul > li a {
+	width: auto;
+}
+
+/* =Search */
+
+.search-in form { 
+	margin-bottom: 0; 
+}
+form[role="search"] fieldset {
+	padding: 0;
+	margin: 0;
+}
+input#search {
+	width: 70%;
+	-moz-border-radius:3px;
+    border-radius:3px;
+}
+
+/* =Other Navigation */
+
+#nav-above, nav-below { 
+	overflow: hidden; 
+}
+#nav-above { 
+	margin: 0 0 1.539em 0; 
+}
+#nav-below { 
+	margin: 1.539em 0 0 0; 
+}
+.nav-next { 
+	float: right; 
+}
+.nav-previous { 
+	float: left; 
+}
+.tagcloud { 
+	line-height: 1; 
+	text-align: center;
+}
+#menu-download-basics > li {
+	list-style: none;
+	margin-bottom: 1em;
+	text-align: center;
+}
+#menu-download-basics a {
+	color: #fff;
+	padding: .27em .539em;
+	background: #807666;
+	background: rgba(128,118,102,0.8);
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+#menu-download-basics li:first-child a {
+	font-weight: bold;
+}
+#menu-download-basics a:hover {}
+
+/* =Section Headings */
+
+.section-title {}
+.section-description {
+	line-height: 1.231em;
+	font-style: italic;
+}
+.section-header {
+	overflow: hidden;
+	position: relative;
+}
+.author .section-description { 
+	margin-left: 80px; 
+}
+.author-avatar {
+	width: 60px;
+	position: absolute;
+	top: 2.73em;
+}
+#author-avatar {
+	float: left;
+	margin: 0.27em 1.539em 0 0;
+}
+
+/* =Sidebar */
+
+#sidebar ul, #sidebar ol, #sidebar li { 
+	padding-left: 0; 
+}
+#sidebar ul ul, #sidebar ul ol, #sidebar ol ul, #sidebar ol ol { 
+	margin-left: 1em; 
+}
+#sidebar p { 
+	text-align: left; 
+}
+#sidebar p:last-child, #content-info p:last-child { 
+	margin-bottom: 0;
+}
+#sidebar > aside > h1 {
+	text-align: center;
+	background: #eee;
+	background: rgba(255,255,255,0.8);
+}
+#sidebar > section h2 {
+	margin-top: 0;
+}
+#widget-area-2, #widget-area-3 { 
+	margin-bottom: 1.539em; 
+}
+
+/* =Sidebar 1 */
+
+#sidebar-1 {}
+
+/* =Sidebar 2 */
+
+#sidebar-2 {}
+
+/* =Posts */
+
+article { 
+	margin-bottom: 2em; 
+}
+article:last-child { 
+	margin-bottom: 0; 
+}
+article header { 
+	margin-bottom: 1.539em; 
+}
+.entry-thumbnail img {
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+.entry-thumbnail.thumb-small img { 
+    -moz-border-radius: 60px;
+    border-radius: 60px;
+}
+.archive .entry-title { 
+	font-weight: bold; 
+}
+.entry-title {
+	margin-top: 0; 
+	text-shadow: #070609 0px 1px 1px; 
+	letter-spacing: 0.05em;
+}
+.entry-title a { 
+	text-decoration: none; 
+}
+article footer  {
+	font-size: .85em;
+	color: #000;
+}
+.entry-content p:first-child { 
+	font-size: 1.231em; 
+}
+.entry-meta { 
+	clear: both; 
+}
+.page-link {
+	clear: both;
+	margin-bottom: 1.539em;
+}
+
+/* google search */
+.error404 #goog-fixurl ul { list-style: none; padding: 0; margin: 0; }
+.error404 #goog-fixurl form { margin: 0; }
+.error404 #goog-wm-qt, .error404 #goog-wm-sb { border: 1px solid #bbb; font-size: 16px; line-height: normal; vertical-align: top; color: #444; border-radius: 2px; }
+.error404 #goog-wm-qt { width: 220px; height: 20px; padding: 5px; margin: 5px 10px 0 0; box-shadow: inset 0 1px 1px #ccc; }
+.error404 #goog-wm-sb { display: inline-block; height: 32px; padding: 0 10px; margin: 5px 0 0; white-space: nowrap; cursor: pointer; background-color: #f5f5f5; background-image: -webkit-linear-gradient(rgba(255,255,255,0), #f1f1f1); background-image: -moz-linear-gradient(rgba(255,255,255,0), #f1f1f1); background-image: -ms-linear-gradient(rgba(255,255,255,0), #f1f1f1); background-image: -o-linear-gradient(rgba(255,255,255,0), #f1f1f1); -webkit-appearance: none; -moz-appearance: none; appearance: none; *overflow: visible; *display: inline; *zoom: 1; }
+.error404 #goog-wm-sb:hover, .error404 #goog-wm-sb:focus { border-color: #aaa; box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1); background-color: #f8f8f8; }
+.error404 #goog-wm-qt:focus, .error404 #goog-wm-sb:focus { border-color: #105cb6; outline: 0; color: #222; }
+.error404 input::-moz-focus-inner { padding: 0; border: 0; }
+				
+/* =Footer */
+
+#colophon {
+	background: #fff;
+	background: rgba(255,255,255,0.50);
+}
+/* =Comments */
+
+#comments-title {}
+
+#comments ul li, #comments ol li { 
+	list-style: none; 
+}
+.comment-author, .comment-meta {
+   margin-bottom: .539em;
+}
+.comment-author img {
+    -moz-border-radius:20px;
+    border-radius:20px;
+}
+.comment-author cite {
+	font-style: normal;
+    font-size: 1.539em;
+	display: inline-block;
+	position: relative;
+	top: -.27em;
+	left: .27em;
+}
+.comment-author .says {
+   display: none;
+}
+#comments article { 
+	margin-bottom: 1.539em; 
+}
+.reply a { 
+	font-weight: bold; 
+}
+.reply a, #reply-title small a {
+	display: inline-block;
+	padding: 0.27em .539em;
+	background: #eee;
+	background: rgba(255,255,255,0.8);
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+#respond ul { 
+	margin-left: 0; 
+}
+#respond li { 
+	list-style: none;
+	margin-bottom: .539em;
+	position: relative;
+}
+#respond label { 
+	display: inline-block; 
+	width: 10em;
+}
+#respond li .required { 
+	margin: -0.27em .539em;
+	position: absolute;
+	top: .539em;
+	left: 8.5em;
+}
+#respond li input {
+	width: 70%;
+}
+.nocomments {
+	margin-bottom: 0;
+	text-align: center;
+}
+
+/* =Responsive web design with media queries */
+
+@media only screen 
+	and (max-width : 990px) { 
+	
+	body {
+	width: 100%;
+	margin: 1.539em auto;
+	}
+	#page { width: 98%; }
+	#main, 
+	#sidebar,
+	#sidebar .sidebars { float: none; }
+	
+	#main,
+	.singular #main { width: 100%; margin-bottom: 1.539em; }
+
+	#sidebar { margin-left: 0; }
+	.home #sidebar { width: 100%; }
+	.home #sidebar .search-in { width: 100%; }
+	.singular #sidebar,
+	.singular #sidebar .sidebars,
+	.singular #sidebar .search-in  { width: 100%; }
+	#sidebar .sidebars {
+		margin-left: 0px;	
+		width: 100%;
+	}
+	#sidebar .sidebars + .sidebars { margin-left: 0; }
+
+}
+
+/* =Alignment for the logo "WordPress je thème" in the footer. Keep it safe if possible ;-) */
+
+#wpjt {
+    display: inline-block; 
+    vertical-align: middle;
+}
+
+/* We Salute you! */

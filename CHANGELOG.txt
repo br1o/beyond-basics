@@ -1,0 +1,70 @@
+# Beyond Basics changelogs (Child Theme of WordPress Basics)
+
+For Those About to Rock... Fire!
+
+## Release 0.3.2  - 20/05/2012
+
+1. Change `$do_not_duplicate = $post->ID;` for `$do_not_duplicate[] = $post->ID;` in the first loop **[home.php]**
+2. Add `'post__not_in' => $do_not_duplicate` in the second loop **[home.php]**
+   The two changes above are made to fix a probleme : when no sticky posts exist, the number of posts within the second loop doesn't match the `posts_per_page`'s number.
+3. Remove `margin-top: 1.539em;` **[css/author.css]**
+4. Add *echo basics_searchform()* to display *basics_searchform()* since the fix **[home.php]** **[404.php]** **[sidebar.php]** (cf. Basics's CHANGELOG.txt)
+5. Change *#search-in* to *.search-in* to reflect changes made in Basics *inc/functions-filter-action.php* **[author.css]**
+6. Remove `width:900px` in *#site-description* rule to avoid display issue when viewport is resised **[author.css]**
+7. Remove `&lt;style&gt;` for *Google Search* */ from **[404.php]** to add it in **[author.css]**
+
+## Release 0.3.1  - 10/03/2012
+
+1. Change the category name by the category ID to display the post filed under the "Uncategorized category" instead of displaying the "news" category. **[home.php]**
+
+## Release 0.3 - 09/03/2012
+
+1. Add styles for /* google search */ from HTML5 Boilerplate **[404.php]**
+2. Add font-size: 0.8em **[css/author.css]**
+3. Turn wp4design into basics.4design **[style.css]**
+4. Modify *basics_link_cat()*. The former version - *basics_link_cat3()* - doesn't work since the multisite version or the subdomain context of my new configuration domains. I have kept the former version for testing purposes.  **[functions.php]**
+
+## Release 0.2.3 - 29/09/2011
+
+1. Add &lt;aside&gt;'s *#sidebar-0* and *#sidebar-4* to wrap two &lt;section&gt;'s in **[sidebar.php]**, **[home.php]**
+2. Change .sidebars to .sidebar in *#sidebar-0* and *#sidebar-4* **[sidebar.php]**
+3. Fix some CSS to match with 1. et 2. above **[author.css]**
+4. Fix collapsing top menu *#widget-area-1* for old IE's (.oldie) **[author.css]**
+
+## Release 0.2.2 - 26/09/2011 - 12:02	
+
+1. Remove width of *.search-in* &lt;section&gt; to display form properly **[author.css]**
+2. Remove the useless second &lt;section&gt; tag displaying form **[404.css]**
+
+## Release 0.2.1 - 26/09/2011 - 00:10	
+
+1. Fix some CSS on *#site-title* **[author.css]**
+
+## Release 0.2 - 25/09/2011 - 14:30
+
+1. Fix path to *grid.css* from Basics and some minor changes in comments **[style.css]**
+2. Change *author.css* to match with the move of &lt;a&gt; into &lt;h1&gt; in &lt;hgroup&gt; (cf. CHANGELOG.txt in Basics folder) **[css/author.css]**
+3. Add *visuallyhidden* rules in *css/author.css* for &ltp;h1&gt; in *menu* class and #colophon **[css/author.css]**
+4. Add *.focusable* classe on *skip-link* link **[css/author.css]**
+5. Add *function basics_link_cat()* function to display a link to read all posts from the "uncategorized" category on home **[functions.php]**
+6. Add *basics_link_cat()* function **[home.php]** (see point n°5 for details).
+7. Add *sidebar-1.php*, *sidebar-2.php* and *sidebar-3.php* from Parent theme Basics
+8. Add *index.php* from Parent theme Basics to bypass the *get_sidebar()* for customization purposes
+9. Copy */js* folder from Basics
+10. Change root directory for */js* folder to accord the path whith the Child theme if exists
+11. Turn some &lt;div&gt; into &lt;section&gt; for consistency accross files in the theme **[404.php]**, **[home.php]**, **[sidebar.php]**
+12. Delete */js* folder from Beyond Basics.
+13. Delete *basics_scripts()* function **[functions.php]**
+
+## Release 0.1.1 - 20/09/2011 - 00:37
+
+1. Add */css*, */img*, *functions.php* and *style.css* file to make the Child theme works
+2. After emptying *css/author.css* from the parent theme (basics.x.x.x), moving it to the Child Theme
+3. Add *screenshot.png*
+4. Add comments **[style.css]**
+5. Add sample of function to override a Parent theme function, especially to load scripts **[functions.php]**
+6. Fix the extras 20px left margin when a &lt;li&gt; is nested within a *.children* class **[css/author.css]**
+7. Add **[404.php]** from Parent Theme *Basics*
+8. Change version numbers for *Beyond Basics* in comments **[style.css]**
+9. Remove version numbers to paths for more simpliciy **[style.css]**
+10. Edit README.txt to reflect the changes brought by the Child Theme Beyond Basics
