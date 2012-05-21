@@ -11,20 +11,20 @@ Version:        0.3.2
 /** 
  * Import markup.css from Basics 
  */
-@import url("../basics/markup.css");
+@import "../basics/markup.css";
 
 /** 
  * Import author.css from Beyond Basics
  */
-@import url("css/author.css");
+@import "css/author.css";
 
 /** 
  * Import grid.css from Basics (or not!) 
  */
-/* @import url("../basics/css/grid-fluid.css"); */
-/* @import url("../basics/css/grid-fixed.css"); */
+/* @import "../basics/css/grid-fluid.css"; */
+/* @import "../basics/css/grid-fixed.css"; */
 
 /** 
 * Import tool.css from Basics 
 */
-@import url("../basics/css/tool.css");
+@import "../basics/css/tool.css";
