@@ -1,4 +1,4 @@
-# Beyond Basics changelogs (Child Theme of WordPress Basics)
+# Beyond Basics (Child Theme of Basics)
 
 For Those About to Rock... Fire!
 
