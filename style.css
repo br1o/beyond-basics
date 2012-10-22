@@ -24,7 +24,7 @@ Version: 0.5
 @import "css/author.css";
 
 /*
- * Import wp-h5bp.css
+ * Import wp-h5bp.css from Basics
  * 1. Specific classes from the core of WordPress or the generated code from Basics
  * 2. Helper classes from h5bp (2nd part of main.css)
  */
