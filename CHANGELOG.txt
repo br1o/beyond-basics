@@ -2,6 +2,12 @@
 
 For Those About to Rock... Fire!
 
+## Release 0.5  - 20/10/2012
+
+1. Update imports paths and names within style.css to match changes since v4.01 of h5bp **[style.css]**
+2. Add *css/markup.css* rules within *css/author.css* 
+3. Tweaks many comments in many files
+
 ## Release 0.3.2  - 20/05/2012
 
 1. Change `$do_not_duplicate = $post->ID;` for `$do_not_duplicate[] = $post->ID;` in the first loop **[home.php]**
