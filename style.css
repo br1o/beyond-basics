@@ -9,23 +9,22 @@ Version: 0.5
 */
 
 /**
- * Import HTML5 Boilerplate normalize.css from Basics
+ * Import HTML5 Boilerplate normalize.css from Basics.
  */
 @import "../basics/css/normalize.css";
 
 /**
- * Import HTML5 Boilerplate main.css (1rst part of main.css) from Basics
+ * Import HTML5 Boilerplate main1.css (1rst part of h5bp's main.css) from Basics.
  */
-@import "../basics/css/main.css";
+@import "../basics/css/main1.css";
 
 /**
- * Import author.css. from Beyond Basics
+ * Import author.css. from Beyond Basics.
  */
 @import "css/author.css";
 
 /*
- * Import wp-h5bp.css from Basics
- * 1. Specific classes from the core of WordPress or the generated code from Basics
- * 2. Helper classes from h5bp (2nd part of main.css)
+ * Import main2.css
+ * Helper classes from h5bp (2nd part of h5bp's main.css).
  */
-@import "../basics/css/wp-h5bp.css";
+@import "../basics/css/main2.css";
