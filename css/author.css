@@ -2,16 +2,298 @@
 @package WordPress
 @subpackage Beyond Basics
 @author Bruno Bichet <bruno.bichet@gmail.com>
-@version 0.3.2
+@version 0.5
 @since Version 0.1
 @todo Check the markup http://validator.w3.org/
 For Those About to Rock. Fire!
 */
 
+/*
+Theme Name: Basics
+Author: Bruno Bichet <http://4design.tl>
+*/
+
 /**
- * =HTML
- * Tip: ask yourself if some CSS rules shouldn't be nested into markup.css 
- */ 
+ * Set the Width of WYSIWYG Editor. 
+ * Should match the width of your main content. 
+ * Think about `$content_width = 580` in functions.php 
+ */
+html .mceContentBody { 
+	max-width: 580px; 
+}
+
+/**
+ * What is the Dresscode Today?
+ */
+
+/* Links first: it's the blood of Web */
+
+a, a:active, a:visited {
+	text-decoration: underline;
+	color: #5B6322; 
+}
+a:hover { 
+	color: #222;
+}
+
+/* Typography 
+(font-family, font-size, line-height and color property are set in css/normalize.css) */
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+	font-weight: normal;
+	margin: 1em 0 .539em 0;
+	line-height: 1;
+	letter-spacing: .01em;
+}
+h1 { 
+	font-size: 1.85em; /* 24px */ 
+}
+h2 { 
+	font-size: 1.539em; /* 20px */ 
+}
+h3 { 
+	font-size: 1.385em; /* 18px */ 
+}
+h4 { 
+	font-size: 1.231em; /* 16px */ 
+}
+h5, h6 { 
+	font-size: 1em; /* 13px */ 
+}
+h6 { 
+	font-style: italic; 
+}
+p { 
+	text-align: justify;
+	letter-spacing: .01em;
+	word-spacing: .05em; 
+	hyphenate: auto; 
+	hyphenate-lines: 3; 
+}
+
+/* Vertical grid */
+
+p, blockquote, figure, dl, dialog, ol, ul, nav, menu {
+	margin-bottom: 1.539em; 
+}
+li ul, li ol { 
+	margin-bottom: 0; 
+	margin-top: 0; 
+}
+dt { 
+	margin-bottom: .539em; 
+}
+dd { 
+	margin-bottom: 1.539em; 
+}
+address, blockquote p, li p, dl p {
+	margin-bottom: 1.539em;
+}
+
+table { 
+	width: 100%; 
+}
+table, form { 
+	margin-bottom: 1.439em; 
+}
+fieldset { 
+	border: 0; 
+}
+th, td { 
+	border: 1px solid #222; 
+}
+th, td, caption, fieldset { 
+	padding: .27em .539em; 
+}
+
+legend { 
+	padding: 0 .27em; 
+}
+button { 
+	vertical-align: middle; 
+}
+input, textarea { 
+	padding: 0.27em; 
+}
+textarea { 
+	width: 99%;
+	max-width: 99%; 
+}
+
+/** 
+ * WordPress classes 
+ */
+
+.sticky {  }
+.bypostauthor {  }
+
+/* Text alignment */
+
+.left {
+	text-align: left;
+}
+.right {
+	text-align: right;
+}
+.center {
+	text-align: center;
+}
+.justify {
+	text-align: justify;
+}
+
+/* Images & WordPress Media */
+
+.alignleft {
+	display: inline;
+	float: left;
+}
+.alignright {
+	display: inline;
+	float: right;
+	margin-left: 1em;
+}
+.aligncenter {
+	clear: both;
+	display: block;
+	margin: 0 auto;
+	margin: 1.539em 0;
+}
+.alignnone {
+	float: none;
+	margin: 1.539em;
+}
+
+img { 
+	border: 0;
+	vertical-align: bottom
+}
+a img { 
+	border: none; 
+}
+p img { 
+	margin-bottom: .539em; /* a small bottom margin prevents content floating under images */
+}
+
+/** 
+ * WordPress Media
+ * Resize images to fit the main content area.
+ * - Applies only to images uploaded via WordPress by targeting size-* classes.
+ * - Other images will be left alone. Use "size-auto" class to apply to other images.
+ */
+img.size-auto, img.size-full, img.size-large, img.size-medium, .attachment img, .widget-area img {
+	max-width: 100%; /* When images are too wide for containing element, force them to fit. */
+	height: auto; /* Override height to match resized width for correct aspect ratio. */
+}
+figure.thumb-small {
+	float: left;
+	margin-right: 1.539em;
+}
+figure.thumb-medium {  }
+figure.thumb-large {  }
+
+img.attachment-thumbnail {  }
+img.attachment-medium {  }
+img.attachment-large {  }
+
+img.alignleft, figure.alignleft {
+	float: left;
+	margin: 1.539em 1.539em 1.539em 0;
+}
+img.alignright, figure.alignright {
+	float: right;
+	margin: 1.539em 0 1.539em 1.539em;
+}
+img.aligncenter, figure.aligncenter, p.attachment img {
+	display: block;
+	margin: 1.539em auto;
+}
+img.alignnone {
+	display: inline;
+	margin: .27em;
+}
+figure.alignnone {
+	display: block;
+	margin: .27em;
+}
+figure img { 
+	margin: .27em 0; 
+}
+figcaption, .wp-caption, .wp-caption-text, .gallery-caption { 
+	padding: .539em 0;
+	font-style: italic;
+	font-size: .85em;
+}
+.gallery-item dd {
+	margin-bottom: 0;
+}
+.wp-smiley { 
+	margin: 0; 
+}
+
+/* General Presentation */
+
+figcaption, address, blockquote, q, cite, em, i, caption, var, dfn { 
+	font-style: italic; 
+}
+q cite, q q { 
+	font-style: normal 
+}
+b, dt, legend, caption, th, thead { 
+	font-weight: bold; /* strong in h5pb */ 
+}
+s, strike { 
+	text-decoration: line-through; 
+}
+bdo { 
+	border-bottom: 1px dotted; 
+}
+u { 
+	text-decoration: underline; 
+}
+time[title] {
+	border: 1px dotted;
+	border-width: 0 0 1px 0;
+}
+time[title]:hover { 
+	cursor: help 
+}
+
+ul { 
+	list-style: disc inside none; 
+}
+ol { 
+	list-style: decimal inside none; 
+}
+ol li, ul ol li { 
+	list-style: decimal inside none; 
+}
+ul li { 
+	list-style: disc inside none; 
+}
+ul ul li { 
+	list-style: circle inside none; 
+}
+ul ul ul li { 
+	list-style-type: square; 
+}
+ol ol li { 
+	list-style-type: lower-alpha; 
+}
+ol ol ol li { 
+	list-style-type: lower-roman; 
+}
+
+textarea, caption, td { 
+	text-align: left; 
+}
+th { 
+	text-align: center; 
+} 
+tbody th { 
+	text-align: left; 
+}
 
 a { 
 	-webkit-transition: background .4s ease;
@@ -43,6 +325,28 @@ a:hover, a:active {
 a:active {
 	position: relative;
 	top: 1px;
+}
+strong a {
+    font-weight: normal;
+    padding: .27em .539em;
+    background: #F29F05;
+    color: #000;
+    -webkit-border-top-left-radius: 8px;
+    -webkit-border-bottom-right-radius: 8px;
+    -moz-border-radius-topleft: 8px;
+    -moz-border-radius-bottomright: 8px;
+    border-top-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+em a {
+    font-weight: normal;
+    padding: .27em .539em;
+    background: #000;
+    color: #fff;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+
 }
 
 /**
@@ -84,7 +388,7 @@ body {
 	margin: 0 auto;
 	padding: 1em 0;
 	/* Play with comments to toggle the 940 pixels grid */ 
-	/*background: url(grid.png) repeat-x;*/
+	/*background: url(img/grid.png) repeat-x;*/
 }
 #banner {
 	padding: 0.539em 1.539em;
@@ -600,13 +904,6 @@ article footer  {
 	}
 	#sidebar .sidebars + .sidebars { margin-left: 0; }
 
-}
-
-/* =Alignment for the logo "WordPress je thème" in the footer. Keep it safe if possible ;-) */
-
-#wpjt {
-    display: inline-block; 
-    vertical-align: middle;
 }
 
 /* We Salute you! */
