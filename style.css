@@ -5,7 +5,7 @@ Description: Child theme for WordPress Basics
 Author: Bruno Bichet
 Author URI: http://4design.tl
 Template: basics
-Version: 0.5
+Version: 0.5.1
 */
 
 /**
@@ -14,7 +14,8 @@ Version: 0.5
 @import "../basics/css/normalize.css";
 
 /**
- * Import HTML5 Boilerplate main1.css (1rst part of h5bp's main.css) from Basics.
+ * Import HTML5 Boilerplate main1.css from Basics
+ * (1rst part of h5bp's main.css).
  */
 @import "../basics/css/main1.css";
 
@@ -23,8 +24,9 @@ Version: 0.5
  */
 @import "css/author.css";
 
-/*
- * Import main2.css
- * Helper classes from h5bp (2nd part of h5bp's main.css).
+/**
+ * Import main2.css from Basics
+ * (2nd part of h5bp's main.css).
+ * Helper classes from HTML5 Boilerplate.
  */
 @import "../basics/css/main2.css";
