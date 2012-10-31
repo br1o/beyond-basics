@@ -2,6 +2,10 @@
 
 For Those About to Rock... Fire!
 
+## Release 0.5.1  - 31/10/2012
+
+1. Tweak comments **[style.css]**
+
 ## Release 0.5  - 20/10/2012
 
 1. Update imports paths and names within style.css to match changes since v4.01 of h5bp **[style.css]**
