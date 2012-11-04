@@ -2,6 +2,10 @@
 
 For Those About to Rock... Fire!
 
+## Release 0.5.2 - 04/10/2012
+
+1. Remove redondant index file (already exists in Basics) **[index.php]**
+
 ## Release 0.5.1  - 31/10/2012
 
 1. Tweak comments **[style.css]**
